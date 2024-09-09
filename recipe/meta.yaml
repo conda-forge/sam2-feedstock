@@ -10,9 +10,9 @@ source:
   sha256: 13de5921730c5af784ac6e18f13bd114f7d71d9cceb0e7cc79786a96b0d0843b
 
 build:
-  skip: true  # [py<310]
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -20,12 +20,12 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
   host:
-    - python
+    - python >=3.10
     - setuptools >=61.0
     - pytorch >=2.3.1
     - pip
   run:
-    - python
+    - python >=3.10
     - pytorch >=2.3.1
     - torchvision >=0.18.1
     - numpy >=1.24.4
