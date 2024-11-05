@@ -16,7 +16,6 @@ requirements:
 test:
   imports:
     - sam2
-    - sam2_configs
 
 about:
   home: https://github.com/facebookresearch/segment-anything-2
